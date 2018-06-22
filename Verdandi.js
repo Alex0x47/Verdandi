@@ -20,8 +20,11 @@ export class Verdandi {
     this.getDaysLabelsFromLang(lang);
     this.getMonthsLabelsFromLang(lang);
     // var currentTimestamp = this.getCurrentTimestamp();
-    // this.getFormattedDate(new Date().getTime(), {separator: ".", fullyear: true, format: "MY"});
-    // this.getVerboseDate(new Date().getTime(), {isDay: true, isYear: true, case: "fgre"});
+    // console.log(currentTimestamp);
+    // var formattedDate = this.getFormattedDate(1528319641000, {separator: ".", fullyear: true, format: "MY"});
+    // console.log(formattedDate);
+    // var verboseDate = this.getVerboseDate(1528319641000, {isDay: true, isYear: true, case: "fgre"});
+    // console.log(verboseDate);
    }
 
   /**
@@ -64,7 +67,7 @@ export class Verdandi {
    * @param {*} date 
    */
   adjustDay(date){
-    var adjustedDay = date.toString();
+    var adjustedDay = Number(date);
     if(date <= 9){
       adjustedDay = "0" + date.toString();
     }
