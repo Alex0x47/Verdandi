@@ -4,6 +4,7 @@
  * If you use it, you have to pray Thor at least one time
  * If you do not, something bad could happen
  * (I don't know what, the manual is not very clear)
+ * TEST COMMIT
  */
 'use strict';
 
@@ -66,7 +67,7 @@ export class Verdandi {
    * To implement
    * @param {*} timestamp 
    */
-  checkTimestamp(timestamp){
+  checkIfTimestamp(timestamp, returnTimestamp){
   }
 
   /**
@@ -106,7 +107,7 @@ export class Verdandi {
     * format : desired format. Can be 'DM' (day + separator + month) or 'MY' (month + separator + year). default (day + sep + month + sep + year)
     * examples : 22/06/18, 22.06, ...
     */
-   getFormattedDate(timestamp, options = {}){
+   getFormattedDate(timestamp = "", options = {}){
    	var myDate = new Date(timestamp);
    	var finaleSeparator = options.separator != null ? options.separator : this.DEFAULT_DATE_SEPARATOR;
    	var year = myDate.getFullYear();
