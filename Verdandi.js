@@ -1,3 +1,10 @@
+/**
+ * Author : Alexandre Grisey
+ * As this script has a viking's godess name
+ * If you use it, you have to pray Thor at least one time
+ * If you do not, something bad could happen
+ * (I don't know what, the manual is not very clear)
+ */
 'use strict';
 
 /**
