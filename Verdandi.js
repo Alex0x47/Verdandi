@@ -26,12 +26,6 @@ export class Verdandi {
     this.DEFAULT_HOUR_SEPARATOR = options.hourSeparator != null ? options.hourSeparator : ":";
     this.getDaysLabelsFromLang(lang);
     this.getMonthsLabelsFromLang(lang);
-    // var currentTimestamp = this.getCurrentTimestamp();
-    // console.log(currentTimestamp);
-    // var formattedDate = this.getFormattedDate(1528319641000, {separator: ".", fullyear: true, format: "MY"});
-    // console.log(formattedDate);
-    // var verboseDate = this.getVerboseDate(1528319641000, {isDay: true, isYear: true, case: "fgre"});
-    // console.log(verboseDate);
    }
 
   /**
@@ -63,10 +57,17 @@ export class Verdandi {
 
   /**
    * Check if the given param is in timestamp format
-   * To implement
+   * If not, return the current timestamp
    * @param {*} timestamp 
    */
   checkTimestamp(timestamp){
+    if ((new Date(timestamp)).getTime() > 0){
+      return timestamp;
+    }
+    else{
+      console.error("Timestamp format not valid. Using current timestamp instead");
+      return this.getCurrentTimestamp();
+    }
   }
 
   /**
@@ -107,6 +108,7 @@ export class Verdandi {
     * examples : 22/06/18, 22.06, ...
     */
    getFormattedDate(timestamp, options = {}){
+    timestamp = this.checkTimestamp(timestamp);
    	var myDate = new Date(timestamp);
    	var finaleSeparator = options.separator != null ? options.separator : this.DEFAULT_DATE_SEPARATOR;
    	var year = myDate.getFullYear();
@@ -158,6 +160,7 @@ export class Verdandi {
    * default format : 22 Juin
    */
    getVerboseDate(timestamp, options = {}){
+    timestamp = this.checkTimestamp(timestamp);
     var month = this.getVerboseMonth(timestamp, options.case);
     var dateFormatted = new Date(timestamp);
     var day = this.adjustDay(dateFormatted.getDate());
@@ -181,6 +184,7 @@ export class Verdandi {
     * @param {*} format camel (default) | upper | lower
     */
    getVerboseWeekDay(timestamp, format = "camel"){
+    timestamp = this.checkTimestamp(timestamp);
     var myDate = new Date(timestamp);
     var day = myDate.getDay();
     var stringDate = this.DAYS[day];
@@ -199,6 +203,7 @@ export class Verdandi {
      * @param {*} format camel (default) | upper | lower
      */
    getVerboseMonth(timestamp, format = "camel"){
+    timestamp = this.checkTimestamp(timestamp);
     var myDate = new Date(timestamp);
     var month = myDate.getMonth();
     var stringMonth = this.MONTHS[month];
