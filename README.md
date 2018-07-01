@@ -1,7 +1,10 @@
-**todo :**
+# Verdandi
+Library that helps you to control time. Easily convert timestamp to full date, with different format.
+
+** TODO **
 * Create a function to get minutes / hours
 * Internationalization
-* Write a better readme.md :)
+* Write a better readme.md :wink:
 
 
 ## Usage
