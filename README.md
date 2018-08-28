@@ -2,7 +2,8 @@
 Library that helps you to control time. Easily convert timestamp to full date, with different format.
 
 ** TODO **
-* Create a function to get minutes / hours
+* Create a function to get minutes / hours ✔️ => Make the doc
+* Make this a npm module
 * Internationalization
 * Write a better readme.md :wink:
 
