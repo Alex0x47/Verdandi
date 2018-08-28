@@ -21,7 +21,7 @@ If 'timestamp' is invalid, use the current timestamp.
 Option | type | description
 ------------ | ------------- | -------------
 separator | string | the character used to separate date's elements. default : "/"
-fullyear | boolean | if false, year format will be 18, if true 2018
+fullyear | boolean | if false, year format will be 18, if true 2018. Default : true
 format | string | desired format. Can be 'DM' (day + separator + month) or 'MY' (month + separator + year). default (day + sep + month + sep + year)
 
 
@@ -34,19 +34,15 @@ Without options, will return something like "01 Juillet".
 Option | type | description
 ------------ | ------------- | -------------
 isDay | boolean | display the day or not (lundi, mardi, ...)
-isYear | boolean | display the month or not (janvier, février, ...)
+isYear | boolean | display the full year or not
 case | string | can be "upper"(case), "lower"(case), or "camel"(case, default). 
 
 
 ### getVerboseWeekDay(timestamp, format)
-Return the day of the week (lundi... dimanche) using the timestamp param (will user the current timestamp if undefined or not a timestamp).
+Return the day of the week (lundi... dimanche) using the timestamp param (will use the current timestamp if undefined or not a timestamp).
 'format' can be "lower", "upper", of "camel" (default). To return "lundi", "LUNDI" or "Lundi".
 
 
 ### getVerboseMonth(timestamp, format)
-Return the month (janvier... décembre) using the timestamp param (will user the current timestamp if undefined or not a timestamp).
+Return the month (janvier... décembre) using the timestamp param (will use the current timestamp if undefined or not a timestamp).
 'format' can be "lower", "upper", of "camel" (default). To return "janvier", "JANVIER" or "Janvier".
-
-```
-
-```
